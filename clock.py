@@ -42,13 +42,16 @@ def clamp(val, min, max):
 def handleTime():
 	t = datetime.datetime.today()
 	if t.minute ==0:
+		print 'it is the top of the hour!'
 		pwm.set_duty_cycle(bluePin, 100)
 		pwm.set_duty_cycle(redPin, 0)
 		pwm.set_duty_cycle(greenPin,0)
 	else:
 		r = mapVals(t.minute, 0, 59, 0, 100)
+		print 'should be %s percent red' % r
 		pwm.set_duty_cycle(redPin, r)
 		g = mapVals(t.minute, 0, 59, 0, 100)
+		print 'should be %s percent green' % g
 		pwm.set_duty_cycle(greenPin, g)
 		pwm.set_duty_cycle(bluePin, 0.0)
 
