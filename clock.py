@@ -40,20 +40,19 @@ def clamp(val, min, max):
     return val
 
 def handleTime():
-	t = datetime.datetime.today()
-	if t.minute ==0:
-		print 'it is the top of the hour!'
-		pwm.set_duty_cycle(bluePin, 100)
-		pwm.set_duty_cycle(redPin, 0)
-		pwm.set_duty_cycle(greenPin,0)
-	else:
-		r = mapVals(t.minute, 0, 59, 0, 100)
-		print 'should be %s percent red' % r
-		pwm.set_duty_cycle(redPin, r)
-		g = mapVals(t.minute, 0, 59, 0, 100)
-		print 'should be %s percent green' % g
-		pwm.set_duty_cycle(greenPin, g)
-		pwm.set_duty_cycle(bluePin, 0.0)
+    t = datetime.datetime.today()
+    if t.minute ==0:
+        print 'it is the top of the hour!'
+        pwm.set_duty_cycle(bluePin, 100)
+        pwm.set_duty_cycle(redPin, 0)
+        pwm.set_duty_cycle(greenPin,0)
+    else:
+        r = mapVals(t.minute, 0, 59, 0, 100)
+        pwm.set_duty_cycle(redPin, r)
+        g = mapVals(t.minute, 0, 59, 0, 100)
+        print 'should be %s and %s percent red and green' % r, g
+        pwm.set_duty_cycle(greenPin, g)
+        pwm.set_duty_cycle(bluePin, 0.0)
 
 #PWM.start(channel, duty, freq=2000)
 pwm.start(greenPin, 10.0, 2000.0)
@@ -62,5 +61,5 @@ pwm.start(bluePin, 10.0, 2000.0)
 atexit.register(exit_handler)
 
 while True:
-	handleTime()
-	time.sleep(30)
+    handleTime()
+    time.sleep(30)
