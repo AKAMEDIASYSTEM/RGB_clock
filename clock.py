@@ -50,7 +50,7 @@ def handleTime():
         r = mapVals(t.minute, 0, 59, 0, 100)
         pwm.set_duty_cycle(redPin, r)
         g = mapVals(t.minute, 0, 59, 0, 100)
-        print 'should be %s and %s percent red and green' % r, g
+        print 'should be %s and %s percent red and green' %(r, g)
         pwm.set_duty_cycle(greenPin, g)
         pwm.set_duty_cycle(bluePin, 0.0)
 
