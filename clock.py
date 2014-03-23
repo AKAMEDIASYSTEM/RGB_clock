@@ -63,4 +63,4 @@ atexit.register(exit_handler)
 
 while True:
 	handleTime()
-	time.sleep(0.5)
+	time.sleep(30)
