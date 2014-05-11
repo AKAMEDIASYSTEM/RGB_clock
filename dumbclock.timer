@@ -1,0 +1,10 @@
+[Unit]
+Description=AKA DUMB CLOCK timer
+
+[Timer]
+OnActiveSec=200
+OnUnitInactiveSec=10
+Unit=dumbclock.service
+
+[Install]
+WantedBy=multi-user.target

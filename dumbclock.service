@@ -1,0 +1,8 @@
+[Unit]
+Description=AKA DUMB CLOCK service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/root/RGB_clock/
+ExecStart=/usr/bin/python clock.py &
+KillMode=process
