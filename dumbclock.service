@@ -5,4 +5,9 @@ Description=AKA DUMB CLOCK service
 Type=simple
 WorkingDirectory=/home/root/RGB_clock/
 ExecStart=/usr/bin/python clock.py &
+Restart=always
+RestartSec=5
 KillMode=process
+
+[Install]
+WantedBy=multi-user.target
