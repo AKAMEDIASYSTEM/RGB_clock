@@ -3,8 +3,8 @@ Description=AKA DUMB CLOCK service
 
 [Service]
 Type=simple
-WorkingDirectory=/home/RGB_clock/
-ExecStart=/usr/bin/python clock.py &
+WorkingDirectory=/root/RGB_clock/
+ExecStart=/usr/bin/python clock.py
 Restart=always
 RestartSec=5
 KillMode=process
